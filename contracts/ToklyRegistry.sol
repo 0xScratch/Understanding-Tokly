@@ -42,7 +42,7 @@ contract ToklyRegistry is Ownable {
     event Added(address indexed deployer, address indexed deployment);
     event Deleted(address indexed deployer, address indexed deployment);
 
-    constructor(address _operator) Ownable(_operator) {
+    constructor(address _operator) Ownable(msg.sender) {
         operator = _operator;
     }
 
