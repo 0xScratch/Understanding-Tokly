@@ -6,7 +6,7 @@ import '@openzeppelin/contracts/utils/ReentrancyGuard.sol';
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-contract Withdrawable is Ownable, ReentrancyGuard {
+contract Withdrawable is Ownable(msg.sender), ReentrancyGuard {
     using SafeERC20 for IERC20;
 
     event Withdrawal(uint amount, uint when);
