@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @author Khiza DAO
  * @dev This contract is responsible for storing and managing the fees for the Tokly dapp.
  */
-contract ToklyFees is Ownable {
+contract ToklyFees is Ownable(msg.sender) {
     mapping(bytes32 => uint) public fees;
 
     /// @dev Returns the fee for a given contract type.
