@@ -3,7 +3,7 @@ pragma solidity ^0.8.11;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Pausable is Ownable {
+contract Pausable is Ownable(msg.sender) {
 
     // === Vars ===
 
